@@ -1,0 +1,10 @@
+textarea {
+  width: 80%;
+  margin: 2vh auto;
+}
+
+label {
+  font-size: 2vh;
+  text-align: start;
+  margin-left: 9vw;
+}

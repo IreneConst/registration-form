@@ -1,0 +1,19 @@
+.header {
+  display: block;
+  margin: 3vh 2vh 0 2vh;
+  cursor: pointer;
+  font-size: 7vh;
+  font-weight: 800;
+}
+
+.pages {
+  margin: 5vh;
+}
+
+.nav-link-selected {
+  color: rgb(0, 124, 146);
+}
+
+.nav-open {
+  color: rgb(53, 175, 49);
+}

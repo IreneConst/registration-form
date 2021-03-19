@@ -1,25 +1,66 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import Auto from "./components/Auto";
+import Personal from "./components/Personal";
+import { Switch, Route } from "react-router-dom";
+import Uploading from "./components/Uploading";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = { email: "", dateOfBirth: "", name: "", info: "" };
+
+  setEmail = (email) => {
+    this.setState({ email });
+  };
+
+  setDateOfBirth = (dateOfBirth) => {
+    this.setState({ dateOfBirth });
+  };
+
+  setName = (name) => {
+    this.setState({ name });
+  };
+
+  setInfo = (info) => {
+    this.setState({ info });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <Switch>
+          <Route
+            // render={(props) => <Auto {...props} />}
+            exact
+            path="/"
+            component={() => <Auto setEmail={this.setEmail} />}
+          />
+          <Route
+            exact
+            path="/personal"
+            component={() => (
+              <Personal
+                setDateOfBirth={this.setDateOfBirth}
+                setName={this.setName}
+                setInfo={this.setInfo}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/uploading"
+            component={() => (
+              <Uploading
+                email={this.state.email}
+                dateOfBirth={this.state.dateOfBirth}
+                name={this.state.name}
+                info={this.state.info}
+              />
+            )}
+          />
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default App;

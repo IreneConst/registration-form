@@ -1,0 +1,47 @@
+.main {
+  font-weight: 600;
+}
+
+.form {
+  background-color: rgb(255, 225, 180);
+  display: flex;
+  flex-direction: column;
+  border-radius: 2vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  font-size: 8vh;
+}
+
+input {
+  width: 80%;
+  margin: 2vh auto;
+}
+
+button {
+  font-weight: 600;
+  font-size: 3vh;
+  width: 10%;
+  height: 5vh;
+  margin: 2vh auto;
+}
+
+a:active,
+a:hover,
+a {
+  text-decoration: none;
+  color: rgb(0, 21, 24);
+}
+
+a:hover {
+  color: rgb(0, 93, 105);
+}
+
+.error {
+  color: red;
+  font-size: 2.5vh;
+  text-align: left;
+  margin-left: 9vw;
+}
